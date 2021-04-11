@@ -1,12 +1,12 @@
 import React from "react";
-import headerImage from "./images/Trollface.png";
-import "./App.css";
+import Header from "./Header";
+import MemeGenerator from "./MemeGenerator";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello</h1>
-      <img src={headerImage} alt="troll face"></img>
+    <div>
+      <Header />
+      <MemeGenerator />
     </div>
   );
 }
