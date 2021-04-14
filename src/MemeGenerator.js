@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+//class component
 class MemeGenerator extends Component {
   constructor() {
     super();
@@ -11,13 +11,13 @@ class MemeGenerator extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
+  } //must bind event handlers
+  //lifecycle method to call upon an API
   componentDidMount() {
     fetch("https://api.imgflip.com/get_memes")
       .then((response) => response.json())
-      .then((response) => {
-        const { memes } = response.data;
+      .then((responseJson) => {
+        const { memes } = responseJson.data;
         this.setState({ allMemeImgs: memes });
       });
   }
@@ -53,7 +53,7 @@ class MemeGenerator extends Component {
             onChange={this.handleChange}
           />
 
-          <button>Gen</button>
+          <button className="gen">Gen</button>
         </form>
         <div className="meme">
           <img src={this.state.randomImg} alt="" />
